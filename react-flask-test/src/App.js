@@ -1,39 +1,33 @@
-import React, {Component} from 'react';
-// import PostForm from './components/PostForm';
+import React, {useEffect} from 'react'
+import './App.css'
 
-class App extends Component {
+function App() {
 
-  async postData(){
-    try{
-      let result = await fetch('https://flaskreact-n-weektwotes-rkuxmn.herokuapp.com/add', {
-        method: 'post',
-        mode: 'no-cors',
-        headers: {
-          'Accept':'application/json',
-          'Content-Type':'application/json',
-        },
-        body: JSON.stringify({
-          'title': 'React Post Test 1',
-          'body': 'React Post Body Test 1'
-        })
+  useEffect(()=>{
+    fetch('/get')
+    .then(response=>response.json()
+    .then(data =>{
+      console.log(data);
+    }))
 
-      });
-      console.log('Result' + result)
+  }, [])
 
-    }catch(e){
-      console.log(e)
-    }
-  }
 
-  render(){
-    return(
-    <>
-    {/* <PostForm></PostForm> */}
-    </>
-    );
-  }
+  return (
+    <div className="App">
+      
+    </div>
+  )
 }
 
+export default App
 
 
-export default App;
+
+
+
+
+
+
+
+
