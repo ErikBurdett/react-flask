@@ -7,7 +7,9 @@ export const Articles = ({articles}) => {
             {articles.map(article =>{
                 return(
                 <List.Item key={article.title}>
-                    <Header>{article.title}</Header>
+                    <h1>< a href="/details">{article.title}</a></h1>
+                        
+                       
 
                 </List.Item>
                 )
