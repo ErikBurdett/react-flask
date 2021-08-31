@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Input, Button} from 'semantic-ui-react';
 
-export const ArticleForm = () =>{
+export const ArticleForm = ({onNewArticle}) =>{
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("")
 
@@ -29,6 +29,12 @@ return (
                     body: JSON.stringify({title:title, body:body})
                 })
                 .then(response=> response.json())
+                .then(console.log(article))
+                .then(
+                    console.log("response worked!"),
+                    onNewArticle(article),
+                    setTitle(""),
+                    setBody(""))
                 .catch(function(error){
                     console.log("error with fetch:" + error.message);
                     //throws error

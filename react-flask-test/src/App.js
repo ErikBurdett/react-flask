@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Container style={{marginTop: 40}}>
-        <ArticleForm/>
+        <ArticleForm onNewArticle={article => setArticles(currentArticles=>[...currentArticles, article])}/>
         <Articles articles = {articles}/>
       </Container>
     </div>
