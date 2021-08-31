@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import Articles from './components/Articles'
+import {Articles} from './components/Articles'
+import {ArticleForm} from './components/ArticleForm'
+import {Container} from "semantic-ui-react"
 
 function App() {
 
@@ -18,7 +20,10 @@ function App() {
 
   return (
     <div className="App">
-      <Articles articles = {articles}/>
+      <Container style={{marginTop: 40}}>
+        <ArticleForm/>
+        <Articles articles = {articles}/>
+      </Container>
     </div>
   )
 }
